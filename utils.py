@@ -115,8 +115,7 @@ def load_data_fashion_mnist(batch_size, resize=None, root="~/.mxnet/datasets/fas
     # Transform later to avoid memory explosion.
     train_data = DataLoader(mnist_train, batch_size, shuffle=True, transform=transform_mnist)
     test_data = DataLoader(mnist_test, batch_size, shuffle=False, transform=transform_mnist)
-    return (train_data, test_data)
-
+    return train_data, test_data
 
 def try_gpu():
     """If GPU is available, return mx.gpu(0); else return mx.cpu()"""
